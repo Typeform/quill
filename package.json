@@ -5,6 +5,7 @@
   "author": "Jason Chen <jhchen7@gmail.com>",
   "homepage": "http://quilljs.com",
   "main": "dist/quill.js",
+  "private": true,
   "files": [
     "assets",
     "blots",
@@ -58,6 +59,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-sauce-launcher": "^1.2.0",
     "lodash": "^4.17.4",
+    "semantic-release": "^17.3.0",
     "style-loader": "~0.19.0",
     "stylus": "~0.54.5",
     "stylus-loader": "^3.0.1",
@@ -73,15 +75,16 @@
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/quilljs/quill"
+    "url": "git+https://github.com/Typeform/quill.git"
   },
   "bugs": {
-    "url": "https://github.com/quilljs/quill/issues"
+    "url": "https://github.com/Typeform/quill/issues"
   },
   "scripts": {
     "build": "webpack --config _develop/webpack.config.js; rm dist/quill.core dist/quill.bubble dist/quill.snow;",
     "build:release": "./_develop/scripts/release.sh",
     "start": "npm run build; bundle exec foreman start -f _develop/procfile",
+    "semantic-release": "semantic-release",
     "test": "npm run test:unit",
     "test:all": "npm run test:unit; npm run test:functional",
     "test:functional": "./_develop/scripts/webdriver.sh",
@@ -95,5 +98,10 @@
     "editor",
     "rich text",
     "wysiwyg"
-  ]
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
 }
