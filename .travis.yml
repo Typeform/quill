@@ -12,6 +12,9 @@ os:
   - linux
 dist: xenial
 
+install:
+  - npm ci
+
 script:
   - npm run build
   - travis_retry npm run travis
